@@ -1,2 +1,2 @@
 pod 'SDWebImage', '~> 3.7.3'
-pod 'AFNetworking', '~> 3.0.4'
+pod 'AFNetworking', '~> 3.0'

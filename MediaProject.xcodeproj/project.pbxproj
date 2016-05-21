@@ -13,6 +13,7 @@
 		2F1E498A1CEEA8E100B00DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E49881CEEA8E100B00DF7 /* Main.storyboard */; };
 		2F1E498C1CEEA8E100B00DF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */; };
 		2F1E498F1CEEA8E100B00DF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498D1CEEA8E100B00DF7 /* LaunchScreen.storyboard */; };
+		2F1E49A61CEEF5E000B00DF7 /* NetWorkBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */; };
 		C460B4BE23E781057720A17E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C432754533E64CBFBDAED76 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,9 @@
 		2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F1E498E1CEEA8E100B00DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F1E49901CEEA8E100B00DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F1E49A41CEEF5E000B00DF7 /* NetWorkBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkBase.h; sourceTree = "<group>"; };
+		2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkBase.m; sourceTree = "<group>"; };
+		2F1E49A71CEEF60A00B00DF7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3437CD6E397A780D45D5FBDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3C432754533E64CBFBDAED76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1DD45321729B5ADF74AA8B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +78,10 @@
 		2F1E497E1CEEA8E100B00DF7 /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				2F1E49A81CEEF99600B00DF7 /* Const */,
+				2F1E49981CEEBEC300B00DF7 /* CodeClass */,
+				2F1E49971CEEBEB500B00DF7 /* BaseClass */,
+				2F1E49961CEEBDF400B00DF7 /* Tools */,
 				2F1E49821CEEA8E100B00DF7 /* AppDelegate.h */,
 				2F1E49831CEEA8E100B00DF7 /* AppDelegate.m */,
 				2F1E49851CEEA8E100B00DF7 /* ViewController.h */,
@@ -91,8 +99,127 @@
 			isa = PBXGroup;
 			children = (
 				2F1E49801CEEA8E100B00DF7 /* main.m */,
+				2F1E49A71CEEF60A00B00DF7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F1E49961CEEBDF400B00DF7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		2F1E49971CEEBEB500B00DF7 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				2F1E49A31CEEBF6000B00DF7 /* ControllerBase */,
+				2F1E49A21CEEBF5900B00DF7 /* ModelBase */,
+				2F1E49A11CEEBF5100B00DF7 /* ViewBase */,
+			);
+			name = BaseClass;
+			sourceTree = "<group>";
+		};
+		2F1E49981CEEBEC300B00DF7 /* CodeClass */ = {
+			isa = PBXGroup;
+			children = (
+				2F1E499A1CEEBEEE00B00DF7 /* My */,
+				2F1E49991CEEBEDE00B00DF7 /* MediaList */,
+			);
+			name = CodeClass;
+			sourceTree = "<group>";
+		};
+		2F1E49991CEEBEDE00B00DF7 /* MediaList */ = {
+			isa = PBXGroup;
+			children = (
+				2F1E49A01CEEBF3800B00DF7 /* Controllers */,
+				2F1E499F1CEEBF3000B00DF7 /* Views */,
+				2F1E499E1CEEBF2800B00DF7 /* Models */,
+			);
+			name = MediaList;
+			sourceTree = "<group>";
+		};
+		2F1E499A1CEEBEEE00B00DF7 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				2F1E499D1CEEBF2000B00DF7 /* Controllers */,
+				2F1E499C1CEEBF1700B00DF7 /* Views */,
+				2F1E499B1CEEBF0800B00DF7 /* Models */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		2F1E499B1CEEBF0800B00DF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2F1E499C1CEEBF1700B00DF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2F1E499D1CEEBF2000B00DF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2F1E499E1CEEBF2800B00DF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2F1E499F1CEEBF3000B00DF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2F1E49A01CEEBF3800B00DF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2F1E49A11CEEBF5100B00DF7 /* ViewBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewBase;
+			sourceTree = "<group>";
+		};
+		2F1E49A21CEEBF5900B00DF7 /* ModelBase */ = {
+			isa = PBXGroup;
+			children = (
+				2F1E49A41CEEF5E000B00DF7 /* NetWorkBase.h */,
+				2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */,
+			);
+			name = ModelBase;
+			sourceTree = "<group>";
+		};
+		2F1E49A31CEEBF6000B00DF7 /* ControllerBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ControllerBase;
+			sourceTree = "<group>";
+		};
+		2F1E49A81CEEF99600B00DF7 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Const;
 			sourceTree = "<group>";
 		};
 		4315008B5126AAC2CFB472D0 /* Frameworks */ = {
@@ -225,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F1E49871CEEA8E100B00DF7 /* ViewController.m in Sources */,
+				2F1E49A61CEEF5E000B00DF7 /* NetWorkBase.m in Sources */,
 				2F1E49841CEEA8E100B00DF7 /* AppDelegate.m in Sources */,
 				2F1E49811CEEA8E100B00DF7 /* main.m in Sources */,
 			);
@@ -337,7 +465,10 @@
 			baseConfigurationReference = 3437CD6E397A780D45D5FBDF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MediaProject/PrefixHeader.pch";
 				INFOPLIST_FILE = MediaProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,7 +480,10 @@
 			baseConfigurationReference = 8B1DD45321729B5ADF74AA8B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MediaProject/PrefixHeader.pch";
 				INFOPLIST_FILE = MediaProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
