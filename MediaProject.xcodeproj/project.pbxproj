@@ -13,7 +13,9 @@
 		2F1E498A1CEEA8E100B00DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E49881CEEA8E100B00DF7 /* Main.storyboard */; };
 		2F1E498C1CEEA8E100B00DF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */; };
 		2F1E498F1CEEA8E100B00DF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498D1CEEA8E100B00DF7 /* LaunchScreen.storyboard */; };
-		2F1E49A61CEEF5E000B00DF7 /* NetWorkBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */; };
+		2F1E49A61CEEF5E000B00DF7 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49A51CEEF5E000B00DF7 /* NetWorkRequest.m */; };
+		2F62A5551CF2FD2600FB2958 /* MediaBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5541CF2FD2600FB2958 /* MediaBaseRequest.m */; };
+		2F62A5581CF2FD4300FB2958 /* MediaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5571CF2FD4300FB2958 /* MediaRequest.m */; };
 		C460B4BE23E781057720A17E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C432754533E64CBFBDAED76 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +30,14 @@
 		2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F1E498E1CEEA8E100B00DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F1E49901CEEA8E100B00DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F1E49A41CEEF5E000B00DF7 /* NetWorkBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkBase.h; sourceTree = "<group>"; };
-		2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkBase.m; sourceTree = "<group>"; };
+		2F1E49A41CEEF5E000B00DF7 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		2F1E49A51CEEF5E000B00DF7 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		2F1E49A71CEEF60A00B00DF7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2F62A5521CF2EB3300FB2958 /* RequestUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
+		2F62A5531CF2FD2600FB2958 /* MediaBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaBaseRequest.h; sourceTree = "<group>"; };
+		2F62A5541CF2FD2600FB2958 /* MediaBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaBaseRequest.m; sourceTree = "<group>"; };
+		2F62A5561CF2FD4300FB2958 /* MediaRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaRequest.h; sourceTree = "<group>"; };
+		2F62A5571CF2FD4300FB2958 /* MediaRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaRequest.m; sourceTree = "<group>"; };
 		3437CD6E397A780D45D5FBDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3C432754533E64CBFBDAED76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1DD45321729B5ADF74AA8B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,8 +209,12 @@
 		2F1E49A21CEEBF5900B00DF7 /* ModelBase */ = {
 			isa = PBXGroup;
 			children = (
-				2F1E49A41CEEF5E000B00DF7 /* NetWorkBase.h */,
-				2F1E49A51CEEF5E000B00DF7 /* NetWorkBase.m */,
+				2F1E49A41CEEF5E000B00DF7 /* NetWorkRequest.h */,
+				2F1E49A51CEEF5E000B00DF7 /* NetWorkRequest.m */,
+				2F62A5531CF2FD2600FB2958 /* MediaBaseRequest.h */,
+				2F62A5541CF2FD2600FB2958 /* MediaBaseRequest.m */,
+				2F62A5561CF2FD4300FB2958 /* MediaRequest.h */,
+				2F62A5571CF2FD4300FB2958 /* MediaRequest.m */,
 			);
 			name = ModelBase;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 		2F1E49A81CEEF99600B00DF7 /* Const */ = {
 			isa = PBXGroup;
 			children = (
+				2F62A5521CF2EB3300FB2958 /* RequestUrl.h */,
 			);
 			name = Const;
 			sourceTree = "<group>";
@@ -351,8 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F62A5581CF2FD4300FB2958 /* MediaRequest.m in Sources */,
 				2F1E49871CEEA8E100B00DF7 /* ViewController.m in Sources */,
-				2F1E49A61CEEF5E000B00DF7 /* NetWorkBase.m in Sources */,
+				2F62A5551CF2FD2600FB2958 /* MediaBaseRequest.m in Sources */,
+				2F1E49A61CEEF5E000B00DF7 /* NetWorkRequest.m in Sources */,
 				2F1E49841CEEA8E100B00DF7 /* AppDelegate.m in Sources */,
 				2F1E49811CEEA8E100B00DF7 /* main.m in Sources */,
 			);

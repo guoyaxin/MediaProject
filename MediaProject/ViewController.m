@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "MediaRequest.h"
+
 
 @interface ViewController ()
 
@@ -18,6 +20,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"mediaProject start");
+//    NetWorkRequest *base = [[NetWorkRequest alloc] init];
+//    [base test];
+//    [base test:@"" para:nil response:^(NSDictionary *dic, NSError *error) {
+//        
+//    }];
+//    [base test:^(NSDictionary *dic, NSError *error) {
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
