@@ -10,19 +10,19 @@
 
 @implementation NetWorkRequest
 
-- (void)test:(NSString *)url para:(NSDictionary *)dic response:(DefaultResponse)response
-{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.dotaly.com/api/v1/authors?iap=0&ident=F5D9CA17-1E5C-4B19-8727-4C3A51B77596&jb=0" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"progress = uplodateProgress = %@", downloadProgress);
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseOjbect = %@", responseObject);
-        response(responseObject, nil);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@", error);
-        response(nil, error);
-    }];
-}
+//- (void)test:(NSString *)url para:(NSDictionary *)dic response:(DefaultResponse)response
+//{
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager GET:@"http://api.dotaly.com/api/v1/authors?iap=0&ident=F5D9CA17-1E5C-4B19-8727-4C3A51B77596&jb=0" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//        NSLog(@"progress = uplodateProgress = %@", downloadProgress);
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"responseOjbect = %@", responseObject);
+//        response(responseObject, nil);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"error = %@", error);
+//        response(nil, error);
+//    }];
+//}
 - (void)requestDataWithUrl:(NSString *)url para:(NSDictionary *)para sucessResponse:(ResponseSuccess)sucessResponse failureResponse:(ResponseFail) failureResponse
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
