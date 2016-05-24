@@ -28,7 +28,7 @@
 //    [base test:^(NSDictionary *dic, NSError *error) {
 //        
 //    }];
-    NSLog(@"%@",LOL_SignleAnchor_Vedios_Url(123));
+//    NSLog(@"%@",LOL_SignleAnchor_Vedios_Url(123));
     
     
     

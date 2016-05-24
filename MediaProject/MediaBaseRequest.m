@@ -10,21 +10,48 @@
 
 @implementation MediaBaseRequest
 
-- (NSString *)appendingAllDotaAnchorsUrl
+- (NSString *)appendingDotaAllAnchorsUrl
 {
     NSString *returnUrl = [Base_Url stringByAppendingString:Dota_AllAnchors_Url];
     return returnUrl;
 }
 
-- (NSString *)appendingSignleAnchorVediaUrl
+- (NSString *)appendingDotaSignleAnchorVediosUrl
 {
     NSString *returnUrl = [Base_Url stringByAppendingString:Dota_SignleAnchor_Vedios_Url];
     return returnUrl;
 }
 
-- (NSString *)appendingDotaVedioUrl
+- (NSString *)appendingDotaSignleVedioUrl
 {
-    NSString *returnUrl = [Base_Url stringByAppendingString:Dota_Viedio_Url];
+    NSString *returnUrl = [Base_Url stringByAppendingString:Dota_Signle_Viedio_Url];
+    return returnUrl;
+}
+
+/*
+ 拼接请求所有 lol 主播列表的 url
+ */
+- (NSString *)appendingLoLAllAnchorsUrl
+{
+    NSString *returnUrl = [Base_Url stringByAppendingString:LOL_AllAnchors_Url];
+    return returnUrl;
+}
+
+/*
+ 拼接请求单个 lol 主播视频的 url
+ */
+- (NSString *)appendingLoLSignleAnchorVediosUrl
+{
+    NSString *returnUrl = [Base_Url stringByAppendingString:LOL_SignleAnchor_Vedios_Url];
+    return returnUrl;
+}
+
+/*
+ 拼接请求 lol 视频的 url
+ */
+- (NSString *)appendingLoLSignleVedioUrl
+{
+    NSString *returnUrl = [Base_Url stringByAppendingString:LOL_Signle_Video_Url];
     return returnUrl;
 }
 

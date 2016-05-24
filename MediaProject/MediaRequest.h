@@ -12,17 +12,31 @@
 /*
  获取所有 Dota 主播的列表
  */
-- (void)getDotaAllAnchorListSucess:(ResponseSuccess)sucessResponse failure:(ResponseFail)failureResponse;
+- (void)getDotaAllAnchorListSuccess:(ResponseSuccess)sucessResponse failure:(ResponseFail)failureResponse;
 
 /*
  获取单个 Dota 主播的视频列表
  */
-- (void)getSignleAnchorVediosWithAuthor:(NSString *)author vedioLimit:(int)limit success:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
+- (void)getDotaSignleAnchorVediosWithAuthor:(NSString *)author vedioLimit:(int)limit success:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
 
 /*
- 获取 Dota 视频的信息
+ 获取单个 Dota 视频的信息
  */
-- (void)getDotaVedioWithType:(NSString *)type vedioId:(NSString *)vedioId success:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
+- (void)getDotaSignleVedioWithType:(NSString *)type vedioId:(NSString *)vedioId success:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
 
+/*
+ 获取所有 lol 主播的列表
+ */
+- (void)getLoLAllAnchorsListSuccess:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
+
+/*
+ 获取单个 lol 主播的视频列表
+ */
+- (void)getLoLSignleAnchorVediosWithAuthor:(NSString *)author vedioLimit:(int)limit success:(ResponseSuccess)successResponse failure:(ResponseFail)failureReponse;
+
+/*
+ 获取单个 lol 视频信息
+ */
+- (void)getLoLSignleVedioWithType:(NSString *)type vedioId:(NSString *)vedioId success:(ResponseSuccess)successResponse failure:(ResponseFail)failureResponse;
 
 @end
