@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "MediaRequest.h"
-
+#import "AuthorModel.h"
 
 @interface ViewController ()
 
@@ -18,18 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"mediaProject start");
-//    NetWorkRequest *base = [[NetWorkRequest alloc] init];
-//    [base test];
-//    [base test:@"" para:nil response:^(NSDictionary *dic, NSError *error) {
-//        
-//    }];
-//    [base test:^(NSDictionary *dic, NSError *error) {
-//        
-//    }];
-//    NSLog(@"%@",LOL_SignleAnchor_Vedios_Url(123));
-    
+    MediaRequest *mediaQuest = [[MediaRequest alloc] init];
+    [mediaQuest getDotaAllAnchorListSuccess:^(NSArray *arr) {
+        NSLog(@"arr = %@", arr);
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error);
+    }];
     
     
 }

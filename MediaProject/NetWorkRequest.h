@@ -11,6 +11,7 @@
 
 typedef void(^ResponseSuccess)(NSDictionary *dic);
 typedef void(^ResponseFail)(NSError *error);
+
 @interface NetWorkRequest : NSObject
 
 @property (nonatomic, copy) ResponseSuccess successResponse;
