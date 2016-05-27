@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F1E49811CEEA8E100B00DF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49801CEEA8E100B00DF7 /* main.m */; };
 		2F1E49841CEEA8E100B00DF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49831CEEA8E100B00DF7 /* AppDelegate.m */; };
-		2F1E49871CEEA8E100B00DF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E49861CEEA8E100B00DF7 /* ViewController.m */; };
 		2F1E498A1CEEA8E100B00DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E49881CEEA8E100B00DF7 /* Main.storyboard */; };
 		2F1E498C1CEEA8E100B00DF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */; };
 		2F1E498F1CEEA8E100B00DF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1E498D1CEEA8E100B00DF7 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,10 @@
 		2F62A55E1CF5330700FB2958 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A55D1CF5330700FB2958 /* AuthorModel.m */; };
 		2F62A5611CF6CBC700FB2958 /* VedioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5601CF6CBC700FB2958 /* VedioModel.m */; };
 		2F62A5641CF6CDB100FB2958 /* VedioDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5631CF6CDB100FB2958 /* VedioDetailModel.m */; };
+		2F62A5671CF6E39F00FB2958 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5661CF6E39E00FB2958 /* BaseViewController.m */; };
+		2F62A56A1CF6E6E400FB2958 /* AuthorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5691CF6E6E400FB2958 /* AuthorsViewController.m */; };
+		2F62A56D1CF6E84300FB2958 /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A56C1CF6E84300FB2958 /* RootTabBarViewController.m */; };
+		2F62A5731CF6EB0400FB2958 /* YXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62A5721CF6EB0400FB2958 /* YXTabBar.m */; };
 		C460B4BE23E781057720A17E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C432754533E64CBFBDAED76 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +31,6 @@
 		2F1E49801CEEA8E100B00DF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F1E49821CEEA8E100B00DF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2F1E49831CEEA8E100B00DF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2F1E49851CEEA8E100B00DF7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2F1E49861CEEA8E100B00DF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2F1E49891CEEA8E100B00DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F1E498E1CEEA8E100B00DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +51,14 @@
 		2F62A5601CF6CBC700FB2958 /* VedioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModel.m; sourceTree = "<group>"; };
 		2F62A5621CF6CDB100FB2958 /* VedioDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioDetailModel.h; sourceTree = "<group>"; };
 		2F62A5631CF6CDB100FB2958 /* VedioDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioDetailModel.m; sourceTree = "<group>"; };
+		2F62A5651CF6E39E00FB2958 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2F62A5661CF6E39E00FB2958 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2F62A5681CF6E6E400FB2958 /* AuthorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorsViewController.h; sourceTree = "<group>"; };
+		2F62A5691CF6E6E400FB2958 /* AuthorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorsViewController.m; sourceTree = "<group>"; };
+		2F62A56B1CF6E84300FB2958 /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
+		2F62A56C1CF6E84300FB2958 /* RootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarViewController.m; sourceTree = "<group>"; };
+		2F62A5711CF6EB0400FB2958 /* YXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXTabBar.h; sourceTree = "<group>"; };
+		2F62A5721CF6EB0400FB2958 /* YXTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXTabBar.m; sourceTree = "<group>"; };
 		3437CD6E397A780D45D5FBDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3C432754533E64CBFBDAED76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1DD45321729B5ADF74AA8B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,8 +112,6 @@
 				2F1E49961CEEBDF400B00DF7 /* Tools */,
 				2F1E49821CEEA8E100B00DF7 /* AppDelegate.h */,
 				2F1E49831CEEA8E100B00DF7 /* AppDelegate.m */,
-				2F1E49851CEEA8E100B00DF7 /* ViewController.h */,
-				2F1E49861CEEA8E100B00DF7 /* ViewController.m */,
 				2F1E49881CEEA8E100B00DF7 /* Main.storyboard */,
 				2F1E498B1CEEA8E100B00DF7 /* Assets.xcassets */,
 				2F1E498D1CEEA8E100B00DF7 /* LaunchScreen.storyboard */,
@@ -143,6 +150,7 @@
 		2F1E49981CEEBEC300B00DF7 /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
+				2F62A56E1CF6EAC500FB2958 /* Tabbar */,
 				2F1E499A1CEEBEEE00B00DF7 /* My */,
 				2F1E49991CEEBEDE00B00DF7 /* MediaList */,
 			);
@@ -193,6 +201,14 @@
 		2F1E499E1CEEBF2800B00DF7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2F62A5561CF2FD4300FB2958 /* MediaRequest.h */,
+				2F62A5571CF2FD4300FB2958 /* MediaRequest.m */,
+				2F62A55C1CF5330700FB2958 /* AuthorModel.h */,
+				2F62A55D1CF5330700FB2958 /* AuthorModel.m */,
+				2F62A55F1CF6CBC700FB2958 /* VedioModel.h */,
+				2F62A5601CF6CBC700FB2958 /* VedioModel.m */,
+				2F62A5621CF6CDB100FB2958 /* VedioDetailModel.h */,
+				2F62A5631CF6CDB100FB2958 /* VedioDetailModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +223,8 @@
 		2F1E49A01CEEBF3800B00DF7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F62A5681CF6E6E400FB2958 /* AuthorsViewController.h */,
+				2F62A5691CF6E6E400FB2958 /* AuthorsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -225,16 +243,8 @@
 				2F1E49A51CEEF5E000B00DF7 /* NetWorkRequest.m */,
 				2F62A5531CF2FD2600FB2958 /* MediaBaseRequest.h */,
 				2F62A5541CF2FD2600FB2958 /* MediaBaseRequest.m */,
-				2F62A5561CF2FD4300FB2958 /* MediaRequest.h */,
-				2F62A5571CF2FD4300FB2958 /* MediaRequest.m */,
 				2F62A5591CF42DAB00FB2958 /* BaseModel.h */,
 				2F62A55A1CF42DAB00FB2958 /* BaseModel.m */,
-				2F62A55C1CF5330700FB2958 /* AuthorModel.h */,
-				2F62A55D1CF5330700FB2958 /* AuthorModel.m */,
-				2F62A55F1CF6CBC700FB2958 /* VedioModel.h */,
-				2F62A5601CF6CBC700FB2958 /* VedioModel.m */,
-				2F62A5621CF6CDB100FB2958 /* VedioDetailModel.h */,
-				2F62A5631CF6CDB100FB2958 /* VedioDetailModel.m */,
 			);
 			name = ModelBase;
 			sourceTree = "<group>";
@@ -242,6 +252,8 @@
 		2F1E49A31CEEBF6000B00DF7 /* ControllerBase */ = {
 			isa = PBXGroup;
 			children = (
+				2F62A5651CF6E39E00FB2958 /* BaseViewController.h */,
+				2F62A5661CF6E39E00FB2958 /* BaseViewController.m */,
 			);
 			name = ControllerBase;
 			sourceTree = "<group>";
@@ -252,6 +264,33 @@
 				2F62A5521CF2EB3300FB2958 /* RequestUrl.h */,
 			);
 			name = Const;
+			sourceTree = "<group>";
+		};
+		2F62A56E1CF6EAC500FB2958 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2F62A5701CF6EAD900FB2958 /* Controller */,
+				2F62A56F1CF6EACE00FB2958 /* View */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		2F62A56F1CF6EACE00FB2958 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F62A5711CF6EB0400FB2958 /* YXTabBar.h */,
+				2F62A5721CF6EB0400FB2958 /* YXTabBar.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2F62A5701CF6EAD900FB2958 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F62A56B1CF6E84300FB2958 /* RootTabBarViewController.h */,
+				2F62A56C1CF6E84300FB2958 /* RootTabBarViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		4315008B5126AAC2CFB472D0 /* Frameworks */ = {
@@ -385,14 +424,17 @@
 			files = (
 				2F62A5611CF6CBC700FB2958 /* VedioModel.m in Sources */,
 				2F62A5581CF2FD4300FB2958 /* MediaRequest.m in Sources */,
-				2F1E49871CEEA8E100B00DF7 /* ViewController.m in Sources */,
+				2F62A5671CF6E39F00FB2958 /* BaseViewController.m in Sources */,
+				2F62A56A1CF6E6E400FB2958 /* AuthorsViewController.m in Sources */,
 				2F62A5551CF2FD2600FB2958 /* MediaBaseRequest.m in Sources */,
 				2F62A55B1CF42DAB00FB2958 /* BaseModel.m in Sources */,
 				2F62A55E1CF5330700FB2958 /* AuthorModel.m in Sources */,
 				2F1E49A61CEEF5E000B00DF7 /* NetWorkRequest.m in Sources */,
+				2F62A56D1CF6E84300FB2958 /* RootTabBarViewController.m in Sources */,
 				2F1E49841CEEA8E100B00DF7 /* AppDelegate.m in Sources */,
 				2F62A5641CF6CDB100FB2958 /* VedioDetailModel.m in Sources */,
 				2F1E49811CEEA8E100B00DF7 /* main.m in Sources */,
+				2F62A5731CF6EB0400FB2958 /* YXTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

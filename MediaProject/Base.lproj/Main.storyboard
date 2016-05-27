@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--AuthorsViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorsViewController" id="BYZ-38-t0r" userLabel="AuthorsViewController" customClass="AuthorsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="555" y="314"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab Bar View Controller-->
         <scene sceneID="8OW-rT-rJ5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y6s-la-f5s" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y6s-la-f5s" customClass="RootTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bhs-Hr-uiV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -69,7 +69,7 @@
         <!--My View Controller-->
         <scene sceneID="V2R-Na-mbg">
             <objects>
-                <viewController id="tc7-DC-IvR" userLabel="My View Controller" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="tc7-DC-IvR" userLabel="My View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="isy-X5-hA2"/>
                         <viewControllerLayoutGuide type="bottom" id="3Mj-V1-V09"/>
