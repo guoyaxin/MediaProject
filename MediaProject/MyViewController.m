@@ -1,22 +1,22 @@
 //
-//  AuthorsViewController.m
+//  MyViewController.m
 //  MediaProject
 //
-//  Created by CLT on 16/5/26.
+//  Created by CLT on 16/5/30.
 //  Copyright © 2016年 yaxin.guo. All rights reserved.
 //
 
-#import "AuthorsViewController.h"
+#import "MyViewController.h"
 
-@interface AuthorsViewController ()
+@interface MyViewController ()
 
 @end
 
-@implementation AuthorsViewController
+@implementation MyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"视频";
+    self.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

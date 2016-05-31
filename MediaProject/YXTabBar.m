@@ -1,4 +1,4 @@
-//
+ //
 //  YXTabBar.m
 //  MediaProject
 //
@@ -14,7 +14,8 @@
 {
     self = [super init];
     if (self) {
-        self.frame = CGRectMake(0, 0, WindownWidth, 49);
+        self.frame = CGRectMake(0, WindowHeight - 49, WindownWidth, 49);
+//        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -25,14 +26,15 @@
     for (int i = 0; i < count; i++) {
         UIButton *btn = buttonItems[i];
         btn.frame = CGRectMake(i * WindownWidth / count, 0, WindownWidth / count, self.frame.size.height);
-        if (i == 0) {
-            btn.selected = YES;
+        if (i == 1) {
+//            btn.selected = YES;
             self.currentItem = btn;
-            self.tabBarSelectedIndex = 0;
+            self.tabBarSelectedIndex = i;
         }
 //        [btn setBackgroundColor:[UIColor redColor]];
-        [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchDown];
         [self addSubview:btn];
+        _buttonItems = buttonItems;
     }
 }
 

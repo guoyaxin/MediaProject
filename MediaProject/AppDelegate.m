@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+//#import "RootTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    RootTabBarViewController *rootVC = [[RootTabBarViewController alloc] init];
+//    self.window.rootViewController = rootVC;
     return YES;
 }
 

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--AuthorsViewController-->
+        <!--MyViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AuthorsViewController" id="BYZ-38-t0r" userLabel="AuthorsViewController" customClass="AuthorsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyViewController" id="BYZ-38-t0r" userLabel="MyViewController" customClass="MyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,9 +16,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.63137254901960782" green="0.60392156862745094" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="X3d-1V-Vf3"/>
+                    <tabBarItem key="tabBarItem" title="视频" id="X3d-1V-Vf3"/>
                     <navigationItem key="navigationItem" id="QAH-CN-4SL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -36,6 +36,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qex-QU-Niy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.058823529409999999" green="0.72941176470000002" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -44,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLd-Fy-dLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="314"/>
+            <point key="canvasLocation" x="393" y="314"/>
         </scene>
         <!--Root Tab Bar View Controller-->
         <scene sceneID="8OW-rT-rJ5">
@@ -53,7 +56,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bhs-Hr-uiV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="HBq-lv-Qj7">
+                    <tabBar key="tabBar" hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" id="HBq-lv-Qj7" customClass="YXTabBar">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -64,12 +67,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQG-iY-JFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="344"/>
+            <point key="canvasLocation" x="871" y="306"/>
         </scene>
-        <!--My View Controller-->
+        <!--AuthorsViewController-->
         <scene sceneID="V2R-Na-mbg">
             <objects>
-                <viewController id="tc7-DC-IvR" userLabel="My View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorsViewController" id="tc7-DC-IvR" userLabel="AuthorsViewController" customClass="AuthorsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="isy-X5-hA2"/>
                         <viewControllerLayoutGuide type="bottom" id="3Mj-V1-V09"/>
@@ -77,9 +80,8 @@
                     <view key="view" contentMode="scaleToFill" id="KVC-Ts-Z1H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="GeT-Hh-J90"/>
+                    <tabBarItem key="tabBarItem" title="我的" id="GeT-Hh-J90"/>
                     <navigationItem key="navigationItem" id="OIP-f4-TLi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
