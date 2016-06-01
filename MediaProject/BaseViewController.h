@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MediaRequest.h"
 
 @interface BaseViewController : UIViewController
 

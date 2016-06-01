@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MBB-7r-8dX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y6s-la-f5s">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--MyViewController-->
+        <!--AuthorsViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MyViewController" id="BYZ-38-t0r" userLabel="MyViewController" customClass="MyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorsViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" userLabel="AuthorsViewController" customClass="AuthorsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,15 +16,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lu3-mY-s82">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zmm-Bo-89t">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="tFl-Sf-uBx"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="iRL-vs-Rom"/>
+                                        </connections>
+                                    </tableView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kl1-59-leU">
+                                        <rect key="frame" x="320" y="0.0" width="320" height="455"/>
+                                        <color key="backgroundColor" red="0.78483780569999995" green="0.047419096819999999" blue="0.094295265820000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="rzb-ke-Hdq"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="xrV-D1-xVx"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.64440016779999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Zmm-Bo-89t" secondAttribute="trailing" id="8W2-Xh-2gb"/>
+                                    <constraint firstItem="Kl1-59-leU" firstAttribute="top" secondItem="lu3-mY-s82" secondAttribute="top" id="HPK-OA-5o2"/>
+                                    <constraint firstItem="Kl1-59-leU" firstAttribute="height" secondItem="lu3-mY-s82" secondAttribute="height" id="VcN-V2-fVl"/>
+                                    <constraint firstItem="Zmm-Bo-89t" firstAttribute="leading" secondItem="lu3-mY-s82" secondAttribute="leading" id="Y1w-Ly-y28"/>
+                                    <constraint firstItem="Zmm-Bo-89t" firstAttribute="top" secondItem="lu3-mY-s82" secondAttribute="top" id="cpo-Co-Tkb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kl1-59-leU" secondAttribute="bottom" id="lsf-WB-z3J"/>
+                                    <constraint firstItem="Kl1-59-leU" firstAttribute="width" secondItem="lu3-mY-s82" secondAttribute="width" id="o3l-u5-uaQ"/>
+                                    <constraint firstItem="Zmm-Bo-89t" firstAttribute="width" secondItem="lu3-mY-s82" secondAttribute="width" id="ohx-Ff-gZ4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kl1-59-leU" secondAttribute="trailing" id="ugq-Jd-obp"/>
+                                    <constraint firstItem="Kl1-59-leU" firstAttribute="leading" secondItem="Zmm-Bo-89t" secondAttribute="trailing" id="vmt-zt-jtT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zmm-Bo-89t" secondAttribute="bottom" id="yYz-mT-nZQ"/>
+                                    <constraint firstItem="Zmm-Bo-89t" firstAttribute="height" secondItem="lu3-mY-s82" secondAttribute="height" id="zJY-EE-NMt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8W2-Xh-2gb"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oRM-KX-Y3F"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.63137254901960782" green="0.60392156862745094" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lu3-mY-s82" secondAttribute="trailing" id="Q2b-Il-ug5"/>
+                            <constraint firstItem="lu3-mY-s82" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U4w-Lj-GcQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lu3-mY-s82" secondAttribute="bottom" id="Ziz-UW-qTY"/>
+                            <constraint firstItem="lu3-mY-s82" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tVB-8S-WU1"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="视频" id="X3d-1V-Vf3"/>
-                    <navigationItem key="navigationItem" id="QAH-CN-4SL"/>
+                    <navigationItem key="navigationItem" id="QAH-CN-4SL">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DCl-93-Tsi">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="DOTA"/>
+                                <segment title="LOL"/>
+                            </segments>
+                            <color key="tintColor" red="0.058823529409999999" green="0.72941176470000002" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="segmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JK5-lT-MLx"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="authorTypeSegment" destination="DCl-93-Tsi" id="Di7-zh-dfV"/>
+                        <outlet property="backgroundScrollView" destination="lu3-mY-s82" id="3iX-Wj-pgV"/>
+                        <outlet property="dotaTableView" destination="Zmm-Bo-89t" id="UZN-Jf-xuF"/>
+                        <outlet property="lolTableView" destination="Kl1-59-leU" id="O7D-gs-xoh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="314"/>
+            <point key="canvasLocation" x="622" y="190"/>
         </scene>
         <!--Item-->
         <scene sceneID="lut-eG-v0T">
@@ -42,17 +114,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6s-la-f5s" kind="relationship" relationship="rootViewController" id="VNP-dY-XZe"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SFn-0j-EMs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLd-Fy-dLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="314"/>
+            <point key="canvasLocation" x="228" y="190"/>
         </scene>
         <!--Root Tab Bar View Controller-->
         <scene sceneID="8OW-rT-rJ5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y6s-la-f5s" customClass="RootTabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Y6s-la-f5s" customClass="RootTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bhs-Hr-uiV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -61,18 +133,39 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tc7-DC-IvR" kind="relationship" relationship="viewControllers" id="kwY-4P-poM"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="QLk-1z-E6v"/>
+                        <segue destination="MBB-7r-8dX" kind="relationship" relationship="viewControllers" id="nAL-Nf-tRp"/>
+                        <segue destination="pLb-6R-eM9" kind="relationship" relationship="viewControllers" id="Xsh-fH-Vxs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQG-iY-JFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="306"/>
+            <point key="canvasLocation" x="-279" y="282"/>
         </scene>
-        <!--AuthorsViewController-->
+        <!--Item-->
+        <scene sceneID="flh-Od-taQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78m-Ca-UFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="pLb-6R-eM9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Hbw-mE-W2D"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFI-az-wjc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.058823529409999999" green="0.72941176470000002" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tc7-DC-IvR" kind="relationship" relationship="rootViewController" id="ETM-Qk-5ED"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="218" y="846"/>
+        </scene>
+        <!--MyViewController-->
         <scene sceneID="V2R-Na-mbg">
             <objects>
-                <viewController storyboardIdentifier="AuthorsViewController" id="tc7-DC-IvR" userLabel="AuthorsViewController" customClass="AuthorsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyViewController" id="tc7-DC-IvR" userLabel="MyViewController" customClass="MyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="isy-X5-hA2"/>
                         <viewControllerLayoutGuide type="bottom" id="3Mj-V1-V09"/>
@@ -80,14 +173,15 @@
                     <view key="view" contentMode="scaleToFill" id="KVC-Ts-Z1H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="我的" id="GeT-Hh-J90"/>
-                    <navigationItem key="navigationItem" id="OIP-f4-TLi"/>
+                    <navigationItem key="navigationItem" title="我的" id="OIP-f4-TLi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fic-lJ-HAp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="1117"/>
+            <point key="canvasLocation" x="697" y="846"/>
         </scene>
     </scenes>
 </document>

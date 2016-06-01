@@ -26,12 +26,11 @@
     for (int i = 0; i < count; i++) {
         UIButton *btn = buttonItems[i];
         btn.frame = CGRectMake(i * WindownWidth / count, 0, WindownWidth / count, self.frame.size.height);
-        if (i == 1) {
-//            btn.selected = YES;
+        if (i == 0) {
+            btn.selected = YES;
             self.currentItem = btn;
             self.tabBarSelectedIndex = i;
         }
-//        [btn setBackgroundColor:[UIColor redColor]];
         [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchDown];
         [self addSubview:btn];
         _buttonItems = buttonItems;
