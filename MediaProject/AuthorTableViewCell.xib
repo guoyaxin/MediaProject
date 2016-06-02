@@ -31,8 +31,8 @@
                         <color key="textColor" red="0.058823529409999999" green="0.72941176470000002" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排名：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32L-vN-dSZ" userLabel="range">
-                        <rect key="frame" x="220" y="18.5" width="83" height="26"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32L-vN-dSZ" userLabel="range">
+                        <rect key="frame" x="220" y="18" width="83" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="2TB-3J-xes"/>
                             <constraint firstAttribute="width" constant="83" id="AAi-MW-hkr"/>
@@ -51,15 +51,25 @@
                         <color key="textColor" red="0.63137254899999995" green="0.60392156860000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7dp-Bz-Rua">
+                        <rect key="frame" x="0.0" y="61.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.63137254899999995" green="0.60392156860000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="7Oh-Rm-Tpi"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ef8-JI-kej" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="2lP-kQ-x4P"/>
                     <constraint firstItem="Xde-3u-120" firstAttribute="top" secondItem="uHf-ns-Xqn" secondAttribute="bottom" constant="4" id="3mx-eE-aPc"/>
+                    <constraint firstAttribute="trailing" secondItem="7dp-Bz-Rua" secondAttribute="trailing" id="8bN-gF-Rzl"/>
+                    <constraint firstAttribute="bottom" secondItem="7dp-Bz-Rua" secondAttribute="bottom" id="9GP-U1-tov"/>
                     <constraint firstItem="uHf-ns-Xqn" firstAttribute="leading" secondItem="Ef8-JI-kej" secondAttribute="trailing" constant="15" id="Ux1-1e-8A0"/>
                     <constraint firstItem="32L-vN-dSZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZeX-gy-rAk"/>
                     <constraint firstItem="uHf-ns-Xqn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bxB-7D-Ofb"/>
                     <constraint firstItem="Xde-3u-120" firstAttribute="leading" secondItem="Ef8-JI-kej" secondAttribute="trailing" constant="15" id="h4j-dt-1M5"/>
                     <constraint firstAttribute="trailing" secondItem="32L-vN-dSZ" secondAttribute="trailing" constant="17" id="jba-0p-h19"/>
+                    <constraint firstItem="7dp-Bz-Rua" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yaE-hP-SsH"/>
                     <constraint firstItem="Ef8-JI-kej" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="zCo-fu-X9G"/>
                 </constraints>
             </tableViewCellContentView>

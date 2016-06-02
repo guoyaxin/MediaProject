@@ -63,6 +63,9 @@
         for (NSDictionary *tmp in authors) {
             AuthorModel *model = [[AuthorModel alloc] init];
             [model setPropertiesWithJsonDic:tmp];
+            if (model.pop.intValue == -1) {
+                model.pop = @0;
+            }
             [resultAuthors addObject:model];
         }
         successResponse(resultAuthors);

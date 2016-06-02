@@ -22,7 +22,7 @@
 //主播id
 @property (nonatomic, strong) NSString *authorId;
 //排名
-@property (nonatomic, strong) NSString *pop;
+@property (nonatomic, strong) NSNumber *pop;
 //头像
 @property (nonatomic, strong) NSString *icon;
 @end

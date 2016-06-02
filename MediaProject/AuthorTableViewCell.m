@@ -20,6 +20,8 @@
     _authorModel = authorModel;
     [self.headerView setImageWithURL:[NSURL URLWithString:authorModel.icon] placeholderImage:nil];
     self.nameLabel.text = authorModel.name;
+    self.dateLabel.text = authorModel.detail;
+    self.rangeLabel.text = [NSString stringWithFormat:@"排名：%@", authorModel.pop];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

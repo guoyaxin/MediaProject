@@ -31,6 +31,8 @@
     self.lolAllAuthors = [NSMutableArray array];
     [self.dotaTableView registerNib:[UINib nibWithNibName:@"AuthorTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:AutorTableViewCell_Identify];
     [self.lolTableView registerNib:[UINib nibWithNibName:@"AuthorTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:AutorTableViewCell_Identify];
+    self.dotaTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.lolTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.dotaTableView.rowHeight = 63;
     self.lolTableView.rowHeight = 63;
     [self requestDotaAllAuthors];
@@ -41,7 +43,17 @@
     MediaRequest *mediaRequest = [[MediaRequest alloc]init];
     [mediaRequest getDotaAllAnchorListSuccess:^(NSArray *arr) {
         [self.dotaAllAuthors addObjectsFromArray:arr];
+        [self.dotaAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
+            if (obj1.pop < obj2.pop) {
+                return NSOrderedAscending;
+            }
+            else if (obj1.pop > obj2.pop) {
+                return NSOrderedDescending;
+            }
+            return NSOrderedSame;
+        }];
         NSLog(@"dota Arr = %@", self.dotaAllAuthors);
+        
         [self.dotaTableView reloadData];
     } failure:^(NSError *error) {
         
@@ -52,7 +64,17 @@
 {
     MediaRequest *mediaRequest = [[MediaRequest alloc] init];
     [mediaRequest getLoLAllAnchorsListSuccess:^(NSArray *arr) {
+        [self.lolAllAuthors removeAllObjects];
         [self.lolAllAuthors addObjectsFromArray:arr];
+        [self.lolAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
+            if (obj1.pop < obj2.pop) {
+                return NSOrderedAscending;
+            }
+            else if (obj1.pop > obj2.pop) {
+                return NSOrderedDescending;
+            }
+            return NSOrderedSame;
+        }];
         [self.lolTableView reloadData];
     } failure:^(NSError *error) {
         
@@ -77,7 +99,11 @@
     if (point.x >= WindownWidth) {
         if (self.lolAllAuthors.count == 0) {
             [self requestLOLAllAuthors];
+            self.authorTypeSegment.selectedSegmentIndex = 1;
         }
+    }
+    else {
+       self.authorTypeSegment.selectedSegmentIndex = 0;
     }
     NSLog(@"point = %@", NSStringFromCGPoint(point));
 }
@@ -108,6 +134,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
