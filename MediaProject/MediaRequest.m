@@ -83,7 +83,7 @@
                               };
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
     [request requestDataWithUrl:url para:paraDic sucessResponse:^(NSDictionary *dic) {
-        NSArray *vedios = [dic objectForKey:@"vedios"];
+        NSArray *vedios = [dic objectForKey:@"videos"];
         NSMutableArray *resultVedios = [NSMutableArray array];
         for (NSDictionary *tmp in vedios) {
             VedioModel *model = [[VedioModel alloc] init];

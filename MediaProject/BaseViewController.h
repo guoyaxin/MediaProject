@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MediaRequest.h"
+#import "RootTabBarViewController.h"
+
+typedef enum : NSUInteger {
+    VedioType_Dota,
+    VedioType_LOL
+} VedioType;
 
 @interface BaseViewController : UIViewController
 
+@property (strong, nonatomic) RootTabBarViewController *rootTabVC;
+
+- (void)backLeftController;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "YXTabBar.h"
 @interface RootTabBarViewController : UITabBarController
-
+@property (strong, nonatomic) YXTabBar *myTabbar;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "RootTabBarViewController.h"
-#import "YXTabBar.h"
+
 
 @interface RootTabBarViewController ()<YXTabBarDelegate>
 
@@ -23,7 +23,7 @@
     [btn1 setImage:[UIImage imageNamed:@"first_normal"] forState:UIControlStateNormal];
     [btn1 setImage:[UIImage imageNamed:@"first_selected"] forState:UIControlStateSelected];
     btn1.imageEdgeInsets = UIEdgeInsetsMake(-10, 0, 0, 0);
-    [btn1 setTitle:@"视频" forState:UIControlStateNormal];
+    [btn1 setTitle:@"主播" forState:UIControlStateNormal];
     btn1.titleLabel.font = [UIFont systemFontOfSize:12];
     [btn1 setTitleEdgeInsets:UIEdgeInsetsMake(30, -55, 0, 0)];
     [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -45,6 +45,7 @@
     mytabBar.buttonItems = buttonItems;
     mytabBar.myDelegate = self;
     [self.view addSubview:mytabBar];
+    self.myTabbar = mytabBar;
     self.selectedIndex = mytabBar.tabBarSelectedIndex;
 }
 

@@ -9,6 +9,7 @@
 #import "AuthorsViewController.h"
 #import "AuthorModel.h"
 #import "AuthorTableViewCell.h"
+#import "VediosViewController.h"
 
 @interface AuthorsViewController ()
 
@@ -19,6 +20,7 @@
 
 @property (strong, nonatomic) NSMutableArray *dotaAllAuthors;
 @property (strong, nonatomic) NSMutableArray *lolAllAuthors;
+@property (assign, nonatomic) VedioType vedioType;
 
 @end
 
@@ -26,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"视频";
+    self.title = @"主播";
     self.dotaAllAuthors = [NSMutableArray array];
     self.lolAllAuthors = [NSMutableArray array];
     [self.dotaTableView registerNib:[UINib nibWithNibName:@"AuthorTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:AutorTableViewCell_Identify];
@@ -38,12 +40,19 @@
     [self requestDotaAllAuthors];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.rootTabVC.myTabbar.hidden = NO;
+}
+
 - (void)requestDotaAllAuthors
 {
+    __weak typeof(self)  weakSelf = self;
     MediaRequest *mediaRequest = [[MediaRequest alloc]init];
     [mediaRequest getDotaAllAnchorListSuccess:^(NSArray *arr) {
-        [self.dotaAllAuthors addObjectsFromArray:arr];
-        [self.dotaAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
+        [weakSelf.dotaAllAuthors addObjectsFromArray:arr];
+        [weakSelf.dotaAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
             if (obj1.pop < obj2.pop) {
                 return NSOrderedAscending;
             }
@@ -52,9 +61,8 @@
             }
             return NSOrderedSame;
         }];
-        NSLog(@"dota Arr = %@", self.dotaAllAuthors);
         
-        [self.dotaTableView reloadData];
+        [weakSelf.dotaTableView reloadData];
     } failure:^(NSError *error) {
         
     }];
@@ -62,11 +70,12 @@
 
 - (void)requestLOLAllAuthors
 {
+    __weak typeof(self) weakself = self;
     MediaRequest *mediaRequest = [[MediaRequest alloc] init];
     [mediaRequest getLoLAllAnchorsListSuccess:^(NSArray *arr) {
-        [self.lolAllAuthors removeAllObjects];
-        [self.lolAllAuthors addObjectsFromArray:arr];
-        [self.lolAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
+        [weakself.lolAllAuthors removeAllObjects];
+        [weakself.lolAllAuthors addObjectsFromArray:arr];
+        [weakself.lolAllAuthors sortUsingComparator:^NSComparisonResult(AuthorModel *obj1, AuthorModel *obj2) {
             if (obj1.pop < obj2.pop) {
                 return NSOrderedAscending;
             }
@@ -75,7 +84,7 @@
             }
             return NSOrderedSame;
         }];
-        [self.lolTableView reloadData];
+        [weakself.lolTableView reloadData];
     } failure:^(NSError *error) {
         
     }];
@@ -84,28 +93,33 @@
 - (IBAction)segmentValueChanged:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
         self.backgroundScrollView.contentOffset = CGPointMake(0, 0);
+        self.vedioType = VedioType_Dota;
     }
     else {
         if (self.lolAllAuthors.count == 0) {
             [self requestLOLAllAuthors];
         }
         self.backgroundScrollView.contentOffset = CGPointMake(WindownWidth, 0);
+        self.vedioType = VedioType_LOL;
     }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGPoint point = scrollView.contentOffset;
-    if (point.x >= WindownWidth) {
-        if (self.lolAllAuthors.count == 0) {
-            [self requestLOLAllAuthors];
-            self.authorTypeSegment.selectedSegmentIndex = 1;
+    if (scrollView == self.backgroundScrollView) {
+        CGPoint point = scrollView.contentOffset;
+        if (point.x >= WindownWidth) {
+            if (self.lolAllAuthors.count == 0) {
+                [self requestLOLAllAuthors];
+                self.authorTypeSegment.selectedSegmentIndex = 1;
+                self.vedioType = VedioType_LOL;
+            }
+        }
+        else {
+            self.authorTypeSegment.selectedSegmentIndex = 0;
+            self.vedioType = VedioType_Dota;
         }
     }
-    else {
-       self.authorTypeSegment.selectedSegmentIndex = 0;
-    }
-    NSLog(@"point = %@", NSStringFromCGPoint(point));
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -136,7 +150,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    AuthorModel *model = [[AuthorModel alloc] init];
+    if (tableView == self.dotaTableView) {
+        model = self.dotaAllAuthors[indexPath.row];
+    }
+    else {
+        model = self.lolAllAuthors[indexPath.row];
+    }
+    UIStoryboard *bord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    VediosViewController *vedioVC = [bord instantiateViewControllerWithIdentifier:@"VediosViewController"];
+    vedioVC.authorModel = model;
+    vedioVC.vedioType = self.vedioType;
+    self.rootTabVC.myTabbar.hidden = YES;
+    [self.navigationController pushViewController:vedioVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

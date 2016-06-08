@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rootTabVC = (RootTabBarViewController *)self.tabBarController;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"0FBAAC"];
 //    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+
+- (void)backLeftController
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
