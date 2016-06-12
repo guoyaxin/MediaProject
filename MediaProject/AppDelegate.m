@@ -21,6 +21,10 @@
     
 //    RootTabBarViewController *rootVC = [[RootTabBarViewController alloc] init];
 //    self.window.rootViewController = rootVC;
+    NSString *st1 = @"2016-06-09";
+    NSString *st2 = @"2016-06-09";
+    //前面的大，返回1，前面的小返回-1，
+    NSLog(@"%d", [st1 compare:st2]);
     return YES;
 }
 

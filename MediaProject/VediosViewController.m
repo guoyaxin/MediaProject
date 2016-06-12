@@ -36,8 +36,8 @@
     self.isPlaying = NO;
     self.isSignleRow = NO;
     self.cellShouldShow = NO;
-    self.isOnCell = YES;
-    self.isOnWindow = YES;
+    self.isOnCell = NO;
+    self.isOnWindow = NO;
     self.vedios = [NSMutableArray array];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize =CGSizeMake(self.view.bounds.size.width/2.0, 140);
@@ -47,6 +47,19 @@
     [self.vedioCollectionView registerNib:[UINib nibWithNibName:@"VedioCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:VedioCollectionViewCell_Identify];
     [self requestVedios];
     [self addShowTypeItem];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+//    if (self.playerView) {
+//        [self.playerView.player pause];
+//        [self.playerView removeObserver:self forKeyPath:@"status"];
+//        [self.playerView removeFromSuperview];
+//        self.isOnWindow = NO;
+//        self.isOnCell = NO;
+//        self.isPlaying = NO;
+//    }
 }
 
 - (void)requestVedios
@@ -121,13 +134,13 @@
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    VedioCollectionViewCell *vedioCell = (VedioCollectionViewCell *)cell;
-    if (self.isPlaying) {
-        [self.player pause];
-    }
-}
+//- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    VedioCollectionViewCell *vedioCell = (VedioCollectionViewCell *)cell;
+//    if (self.isPlaying) {
+//        [self.player pause];
+//    }
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,8 +152,14 @@
 - (void)vedioCollectionViewPlayBtnClicked:(VedioCollectionViewCell *)cell
 {
     if (self.playerView) {
+        if (self.isPlaying) {
+            [self.playerView.player pause];
+            self.isPlaying = NO;
+        }
+        [self.playerView removeObserver:self];
         [self.playerView removeFromSuperview];
         self.isOnCell = NO;
+        self.isOnWindow = NO;
     }
     VedioModel *model = cell.vedioModel;
     self.currentCell = cell;
@@ -175,7 +194,6 @@
             
         }];
     }
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -231,9 +249,6 @@
             if (self.cellShouldShow) {
                 [self backToCell];
             }
-            else {
-                
-            }
             
         }
   
@@ -270,10 +285,6 @@
             [self.currentCell.contentView addSubview:self.playerView];
             self.isOnCell = YES;
             self.isOnWindow = NO;
-            //        [currentCell.backgroundIV addSubview:wmPlayer];
-            //        [currentCell.backgroundIV bringSubviewToFront:wmPlayer];
-            
-            
             
         }completion:^(BOOL finished) {
             
@@ -283,7 +294,14 @@
 }
 - (void)dealloc
 {
-    [self.playerView removeObserver:self forKeyPath:@"status"];
+    if (self.playerView) {
+        [self.playerView.player pause];
+        [self.playerView removeObserver:self];
+        [self.playerView removeFromSuperview];
+        self.isOnWindow = NO;
+        self.isOnCell = NO;
+        self.isPlaying = NO;
+    }
 //    [self.playerView removeObserver:self forKeyPath:@"loadedTimeRanges"];
 }
 /*
