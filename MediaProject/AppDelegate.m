@@ -17,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSArray *arr = [NSArray array];
+    
     // Override point for customization after application launch.
     
 //    RootTabBarViewController *rootVC = [[RootTabBarViewController alloc] init];

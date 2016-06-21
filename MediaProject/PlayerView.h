@@ -11,10 +11,13 @@
 
 @interface PlayerView : UIView
 
-- (id)initWithFrame:(CGRect)frame vedioUrl:(NSString *)vedioUrl observer:(id)observer;
+- (id)initWithFrame:(CGRect)frame vedioUrl:(NSString *)vedioUrl;
 
-- (void)removeObserver:(NSObject *)observer;
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerItem *currentItem;
+
+@property (nonatomic, strong) UIView *interactionView;
+@property (nonatomic, strong) UISlider *progressSlider;
+@property (nonatomic, assign) id observer;
 @end

@@ -156,7 +156,6 @@
             [self.playerView.player pause];
             self.isPlaying = NO;
         }
-        [self.playerView removeObserver:self];
         [self.playerView removeFromSuperview];
         self.isOnCell = NO;
         self.isOnWindow = NO;
@@ -174,12 +173,11 @@
             [detailModel setValuesForKeysWithDictionary:dic];
             NSLog(@"vedio Dic = %@", dic);
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.playerView = [[PlayerView alloc] initWithFrame:cell.bounds vedioUrl:detailModel.url observer:weakSelf];
-                //            [cell addSubview:weakSelf.playerView];
-                [cell.contentView addSubview:weakSelf.playerView];
-                [cell.contentView bringSubviewToFront:weakSelf.playerView];
-                self.isOnCell = YES;
-                self.isOnWindow = NO;
+                weakSelf.playerView = [[PlayerView alloc] initWithFrame:cell.bounds vedioUrl:detailModel.url];
+//                [cell.contentView addSubview:weakSelf.playerView];
+//                [cell.contentView bringSubviewToFront:weakSelf.playerView];
+//                weakSelf.isOnCell = YES;
+//                weakSelf.isOnWindow = NO;
  
             });
            //            cell.cellPlayer = weakSelf.player;
@@ -196,37 +194,37 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    AVPlayerItem *playerItem = (AVPlayerItem *)object;
-    if ([keyPath isEqualToString:@"status"]) {
-        if ([playerItem status] == AVPlayerStatusReadyToPlay) {
-            NSLog(@"AVPlayerStatusReadyToPlay");
-            [self.playerView.player play];
-            self.isPlaying = YES;
-        } else if ([playerItem status] == AVPlayerStatusFailed) {
-            NSLog(@"AVPlayerStatusFailed");
-        }
-    } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-//        NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
-//        NSLog(@"Time Interval:%f",timeInterval);
-//        CMTime duration = self.playerItem.duration;
-//        CGFloat totalDuration = CMTimeGetSeconds(duration);
-//        [self.videoProgress setProgress:timeInterval / totalDuration animated:YES];
-    }
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+//    AVPlayerItem *playerItem = (AVPlayerItem *)object;
+//    if ([keyPath isEqualToString:@"status"]) {
+//        if ([playerItem status] == AVPlayerStatusReadyToPlay) {
+//            NSLog(@"AVPlayerStatusReadyToPlay");
+//            [self.playerView.player play];
+//            self.isPlaying = YES;
+//        } else if ([playerItem status] == AVPlayerStatusFailed) {
+//            NSLog(@"AVPlayerStatusFailed");
+//        }
+//    } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+////        NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
+////        NSLog(@"Time Interval:%f",timeInterval);
+////        CMTime duration = self.playerItem.duration;
+////        CGFloat totalDuration = CMTimeGetSeconds(duration);
+////        [self.videoProgress setProgress:timeInterval / totalDuration animated:YES];
+//    }
+//}
 
 
-- (NSString *)convertTime:(CGFloat)second{
-    NSDate *d = [NSDate dateWithTimeIntervalSince1970:second];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    if (second/3600 >= 1) {
-        [formatter setDateFormat:@"HH:mm:ss"];
-    } else {
-        [formatter setDateFormat:@"mm:ss"];
-    }
-    NSString *showtimeNew = [formatter stringFromDate:d];
-    return showtimeNew;
-}
+//- (NSString *)convertTime:(CGFloat)second{
+//    NSDate *d = [NSDate dateWithTimeIntervalSince1970:second];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    if (second/3600 >= 1) {
+//        [formatter setDateFormat:@"HH:mm:ss"];
+//    } else {
+//        [formatter setDateFormat:@"mm:ss"];
+//    }
+//    NSString *showtimeNew = [formatter stringFromDate:d];
+//    return showtimeNew;
+//}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -295,8 +293,8 @@
 - (void)dealloc
 {
     if (self.playerView) {
-        [self.playerView.player pause];
-        [self.playerView removeObserver:self];
+//        [self.playerView.player pause];
+//        [self.playerView removeObserver:self];
         [self.playerView removeFromSuperview];
         self.isOnWindow = NO;
         self.isOnCell = NO;
